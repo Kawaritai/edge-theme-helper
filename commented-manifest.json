@@ -1,0 +1,74 @@
+/**
+  Comments about modifiable colours in the Chrome/Edge theme manifest file.
+
+  Useful Links:
+  - Documentation (limited): https://developer.chrome.com/docs/extensions/develop/ui/themes
+      - `kOverwritableColorTable`: https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/themes/browser_theme_pack.cc;l=222
+  - Editor 1: https://www.themebeta.com/chrome-theme-creator-online.html
+  - Editor 2: https://chrometheme.studio/
+
+  Notes:
+   - Information here relates to Edge theme-changing experience (!). I don't use Chrome.
+   - Tab Groups: 
+      - You cannot modify the text/background colours of tab groups, except via browser dark/light mode.
+   - Dark/Light Mode: 
+      - You can change the dark/light mode preference independent of the loaded theme. This further modifies browser appearance for some non-customisable elements (e.g. tab groups)
+   - Vertical Tabs Behaviour: 
+      - For vertical tabs in Edge, the "toolbar" colour setting overrides other colours (i.e. frame, background tabs).
+      - Due to this override, it doesn't seem like the default Dark Mode Edge theme for the top browser bar can be replicated with a loaded theme.
+   - Toolbar: 
+      - The toolbar colour slightly affects the colours of: tab groups and "button"s
+      - Although you can specify the opacity of the buttons, they still get affected at 100% opacity. 
+*/
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "Theme",
+  "theme": {
+    "images": {}, // See Editor 1, documentation, and `kPersistingImages`
+    "colors": {
+      /* Here: All modifiable colors in Chromium (according to `kOverwritableColorTable`) */
+      "background_tab": [0, 0, 0],
+      "background_tab_inactive": [0, 0, 0],
+      "background_tab_incognito": [0, 0, 0],
+      "background_tab_incognito_inactive": [0, 0, 0],
+
+      // Background/active text colours for tabs
+      "tab_background_text": [0, 0, 0],
+      "tab_background_text_inactive": [0, 0, 0],
+      "tab_background_text_incognito": [0, 0, 0],
+      "tab_background_text_incognito_inactive": [0, 0, 0],
+      "tab_text": [0, 0, 0],
+
+      "bookmark_text": [0, 0, 0],
+
+      // Windows buttons (minimize, maximize, close).
+      "button_background": [0, 0, 0], // May specify opacity: [0, 0, 0, 0.5]
+
+      // "frame" is outside of background/active tabs, but excludes omnibox/toolbar.
+      "frame": [0, 0, 0],
+      "frame_inactive": [0, 0, 0],
+      "frame_incognito": [0, 0, 0],
+      "frame_incognito_inactive": [0, 0, 0],
+
+      // New Tab Page -- I'd ignore these; prefer New Tab override extensions.
+      "ntp_background": [0, 0, 0],
+      "ntp_header": [0, 0, 0],
+      "ntp_link": [0, 0, 0],
+      "ntp_text": [0, 0, 0],
+
+      // omnibox is the address bar
+      "omnibox_background": [0, 0, 0],
+      "omnibox_text": [0, 0, 0],
+
+      // Toolbar is the active tab + top bar. In vertical tabs, it's the background tabs + entire top bar excl. "button"s. 
+      "toolbar": [0, 0, 0],
+      "toolbar_button_icon": [0, 0, 0], // Standard browser navigation icons, etc.
+      "toolbar_text": [0, 0, 0]
+    },
+    "tints": { // See documentation and `kTintTable`.
+    },
+    "properties": { // See documentation and `kDisplayProperties`
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "My Theme",
+  "theme": {
+    "colors": {
+      "background_tab": [25, 25, 25],
+      "background_tab_inactive": [15, 15, 15],
+      "background_tab_incognito": [25, 25, 25],
+      "background_tab_incognito_inactive": [15, 15, 15],
+
+      "tab_background_text": [255, 255, 255],
+      "tab_background_text_inactive": [200, 200, 200],
+      "tab_background_text_incognito": [255, 255, 255],
+      "tab_background_text_incognito_inactive": [200, 200, 200],
+      "tab_text": [255, 255, 255],
+
+      "bookmark_text": [255, 255, 255],
+
+      "button_background": [0, 0, 0, 0],
+
+      "frame": [28, 28, 28],
+      "frame_inactive": [28, 28, 28],
+      "frame_incognito": [28, 28, 28],
+      "frame_incognito_inactive": [28, 28, 28],
+
+      "omnibox_background": [255, 255, 255],
+      "omnibox_text": [0, 0, 0],
+
+      "toolbar": [28, 28, 28],
+      "toolbar_button_icon": [255, 255, 255],
+      "toolbar_text": [255, 255, 255]
+    }
+  }
+}
